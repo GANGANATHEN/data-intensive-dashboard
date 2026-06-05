@@ -1,0 +1,8 @@
+# Ignore node_modules for all sub-folders
+**/node_modules
+.next
+.env
+.env.local
+.DS_Store
+dist
+out
