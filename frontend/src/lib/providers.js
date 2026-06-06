@@ -1,11 +1,11 @@
 // providers.js
 "use client";
-
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { useState } from "react";
 
 export default function Providers({ children }) {
+  
   // Using useState to ensure the client is created once
   const [queryClient] = useState(
     () =>
@@ -18,6 +18,7 @@ export default function Providers({ children }) {
         },
       }),
   );
+
   if (typeof window !== "undefined") {
     const { worker } = require("../mocks/browser");
     worker.start();
